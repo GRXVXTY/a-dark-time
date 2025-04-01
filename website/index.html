@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Dark Time - Character Creation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hourglass-half"></i>
+                <h1>A Dark Time</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" data-section="characters">Characters</a></li>
+                    <li><a href="#" data-section="monsters">Monsters</a></li>
+                    <li><a href="#" data-section="weapons">Weapons</a></li>
+                    <li><a href="#" data-section="gadgets">Gadgets</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="characters" class="content-section active">
+                <h2>Character Creation</h2>
+                <div class="template-container">
+                    <div class="template-card">
+                        <h3>New Character</h3>
+                        <form id="character-form">
+                            <div class="form-group">
+                                <label for="char-name">Character Name</label>
+                                <input type="text" id="char-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="char-class">Class</label>
+                                <select id="char-class" required>
+                                    <option value="">Select a class</option>
+                                    <option value="warrior">Warrior</option>
+                                    <option value="mage">Mage</option>
+                                    <option value="rogue">Rogue</option>
+                                    <option value="priest">Priest</option>
+                                </select>
+                            </div>
+                            <div class="stats-container">
+                                <h4>Character Stats</h4>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <label for="strength">Strength</label>
+                                        <input type="number" id="strength" min="1" max="20" value="10">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="dexterity">Dexterity</label>
+                                        <input type="number" id="dexterity" min="1" max="20" value="10">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="constitution">Constitution</label>
+                                        <input type="number" id="constitution" min="1" max="20" value="10">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="intelligence">Intelligence</label>
+                                        <input type="number" id="intelligence" min="1" max="20" value="10">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="wisdom">Wisdom</label>
+                                        <input type="number" id="wisdom" min="1" max="20" value="10">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="charisma">Charisma</label>
+                                        <input type="number" id="charisma" min="1" max="20" value="10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="char-background">Background</label>
+                                <textarea id="char-background" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Create Character</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="monsters" class="content-section">
+                <h2>Monster Creation</h2>
+                <div class="template-container">
+                    <div class="template-card">
+                        <h3>New Monster</h3>
+                        <form id="monster-form">
+                            <div class="form-group">
+                                <label for="monster-name">Monster Name</label>
+                                <input type="text" id="monster-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="monster-type">Type</label>
+                                <select id="monster-type" required>
+                                    <option value="">Select a type</option>
+                                    <option value="undead">Undead</option>
+                                    <option value="demon">Demon</option>
+                                    <option value="beast">Beast</option>
+                                    <option value="elemental">Elemental</option>
+                                </select>
+                            </div>
+                            <div class="stats-container">
+                                <h4>Monster Stats</h4>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <label for="monster-hp">HP</label>
+                                        <input type="number" id="monster-hp" min="1" value="100">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="monster-ac">AC</label>
+                                        <input type="number" id="monster-ac" min="1" max="30" value="15">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="monster-speed">Speed</label>
+                                        <input type="number" id="monster-speed" min="0" value="30">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="monster-cr">CR</label>
+                                        <input type="number" id="monster-cr" min="0" step="0.25" value="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="monster-description">Description</label>
+                                <textarea id="monster-description" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Create Monster</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="weapons" class="content-section">
+                <h2>Weapon Creation</h2>
+                <div class="template-container">
+                    <div class="template-card">
+                        <h3>New Weapon</h3>
+                        <form id="weapon-form">
+                            <div class="form-group">
+                                <label for="weapon-name">Weapon Name</label>
+                                <input type="text" id="weapon-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="weapon-type">Type</label>
+                                <select id="weapon-type" required>
+                                    <option value="">Select a type</option>
+                                    <option value="melee">Melee</option>
+                                    <option value="ranged">Ranged</option>
+                                    <option value="magical">Magical</option>
+                                </select>
+                            </div>
+                            <div class="stats-container">
+                                <h4>Weapon Stats</h4>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <label for="weapon-damage">Damage</label>
+                                        <input type="text" id="weapon-damage" placeholder="1d8" required>
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="weapon-range">Range</label>
+                                        <input type="number" id="weapon-range" min="0" value="5">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="weapon-durability">Durability</label>
+                                        <input type="number" id="weapon-durability" min="1" value="100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="weapon-description">Description</label>
+                                <textarea id="weapon-description" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Create Weapon</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gadgets" class="content-section">
+                <h2>Gadget Creation</h2>
+                <div class="template-container">
+                    <div class="template-card">
+                        <h3>New Gadget</h3>
+                        <form id="gadget-form">
+                            <div class="form-group">
+                                <label for="gadget-name">Gadget Name</label>
+                                <input type="text" id="gadget-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gadget-type">Type</label>
+                                <select id="gadget-type" required>
+                                    <option value="">Select a type</option>
+                                    <option value="utility">Utility</option>
+                                    <option value="combat">Combat</option>
+                                    <option value="magical">Magical</option>
+                                </select>
+                            </div>
+                            <div class="stats-container">
+                                <h4>Gadget Stats</h4>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <label for="gadget-power">Power Level</label>
+                                        <input type="number" id="gadget-power" min="1" max="10" value="5">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="gadget-durability">Durability</label>
+                                        <input type="number" id="gadget-durability" min="1" value="100">
+                                    </div>
+                                    <div class="stat-item">
+                                        <label for="gadget-charges">Charges</label>
+                                        <input type="number" id="gadget-charges" min="0" value="3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="gadget-description">Description</label>
+                                <textarea id="gadget-description" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Create Gadget</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
